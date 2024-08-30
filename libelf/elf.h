@@ -4488,4 +4488,26 @@ enum
 #define R_OR1K_TLS_DTPOFF	33
 #define R_OR1K_TLS_DTPMOD	34
 
+
+/* intelgt specific declarations.  */
+
+/* Processor specific flags for the Ehdr e_flags field.  */
+/* NONE */
+
+/* Processor specific values for the Shdr sh_type field.  */
+#define SHT_ZEBIN_SPIRV          0xff000009 /* .spv.kernel section, value the same as SHT_OPENCL_SPIRV */
+#define SHT_ZEBIN_ZEINFO         0xff000011 /* .ze_info section */
+#define SHT_ZEBIN_GTPIN_INFO     0xff000012 /* .gtpin_info section */
+#define SHT_ZEBIN_VISAASM        0xff000013 /* .visaasm section */
+#define SHT_ZEBIN_MISC           0xff000014
+
+/* Intel Graphics Technology specific relocs.  */
+#define R_ZE_NONE                         0
+#define R_ZE_COPY                         0 /* fake definition since none was provided */
+#define R_ZE_RELATIVE                     0 /* fake definition since none was provided */
+#define	R_ZE_SYM_ADDR                     1 /* 64-bit address */
+#define R_ZE_SYM_ADDR_32                  2 /* 32-bit address or lower 32-bit of a 64-bit address */
+#define R_ZE_SYM_ADDR_32_HI               3 /* higher 32bits of a 64-bit address */
+#define R_ZE_PER_THREAD_PAYLOAD_OFFSET_32 4 /* 32-bit field of payload offset of per-thread data */
+
 #endif	/* elf.h */

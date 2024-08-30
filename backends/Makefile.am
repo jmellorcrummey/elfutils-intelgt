@@ -108,13 +108,15 @@ mips_SRCS = mips_init.c mips_symbol.c mips_initreg.c \
 
 hexagon_SRCS = hexagon_init.c hexagon_symbol.c
 
+intelgt_SRCS = intelgt_init.c intelgt_symbol.c
+
 libebl_backends_a_SOURCES = $(i386_SRCS) $(sh_SRCS) $(x86_64_SRCS) \
 			    $(ia64_SRCS) $(alpha_SRCS) $(arm_SRCS) \
 			    $(aarch64_SRCS) $(sparc_SRCS) $(ppc_SRCS) \
 			    $(ppc64_SRCS) $(s390_SRCS) \
 			    $(m68k_SRCS) $(bpf_SRCS) $(riscv_SRCS) $(csky_SRCS) \
 			    $(loongarch_SRCS) $(arc_SRCS) $(mips_SRCS) \
-			    $(hexagon_SRCS)
+			    $(hexagon_SRCS) $(intelgt_SRCS)
 
 libebl_backends_pic_a_SOURCES =
 am_libebl_backends_pic_a_OBJECTS = $(libebl_backends_a_SOURCES:.c=.os)
