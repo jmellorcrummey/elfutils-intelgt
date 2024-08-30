@@ -221,7 +221,9 @@ elf_update (Elf *elf, Elf_Cmd cmd)
 	  __libelf_seterrno (ELF_E_UPDATE_RO);
 	  size = -1;
 	}
-      else if (unlikely (elf->fildes == -1))
+      else if (unlikely (elf->fildes == -1)
+	  && elf->cmd != ELF_C_RDWR_MMAP
+	  && elf->cmd != ELF_C_WRITE_MMAP)
 	{
 	  /* We closed the file already.  */
 	  __libelf_seterrno (ELF_E_FD_DISABLED);
